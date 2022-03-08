@@ -1,0 +1,128 @@
+<div class="wrapper">
+	<!-- Sidebar -->
+	<nav id="sidebar" class="active">
+		<div class="sidebar-header">
+			<h3>Menú Proiectus</h3>
+		</div>
+		<ul class="list-unstyled components">
+			<li class="normal"><a  href="#"><i class="icon fa fa-tachometer fa-fw mr-3" aria-hidden="true"></i>Tauler</a></li>
+			<li class="normal {{request()->routeIs('management') ? 'active' : ''}}"><a  href="{{route('management')}}"><i class="icon fa fa-tasks fa-fw mr-3" aria-hidden="true"></i>Menu</a></li>
+			@if(auth()->user()->hasPermissionTo('categoria.view'))
+			<li class="central {{request()->routeIs('usuaris.index','instituts.index','empreses.index', 'categories.index') ? 'active' : ''}}" >
+				<a href="#GCentral" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-lock pr-3 pl-2"></i>Gestió Central</a>
+				<ul class="collapse list-unstyled" id="GCentral">
+					@endif
+					@if(auth()->user()->hasRole('Administrador'))
+					<li class="{{request()->routeIs('usuaris.index') ? 'active' : ''}}">
+						<a href="{{route('usuaris.index')}}"><i class="fas fa-user-circle pr-2"></i> Usuaris</a>
+					</li>
+					<li class="{{request()->routeIs('instituts.index') ? 'active' : ''}}">
+						<a href="{{route('instituts.index')}}"><i class="fas fa-school pr-2"></i>Centres Educatius</a>
+					</li>
+					<li class="{{request()->routeIs('empreses.index') ? 'active' : ''}}">
+						<a href="{{route('empreses.index')}}"><i class="fas fa-building pr-2"></i>Entitats</a>
+					</li>
+					@endif
+					@if(auth()->user()->hasPermissionTo('categoria.view'))
+					<li class="{{request()->routeIs('categories.index') ? 'active' : ''}}">
+						<a href="{{route('categories.index')}}"><i class="fas fa-list-alt pr-2"></i>Categories</a>
+					</li>
+				</ul>
+			</li>
+			@endif
+			<li class="interna {{request()->routeIs('professors.index','alumnos.index','grups.index', 'propostes.index') ? 'active' : ''}}">
+				<a href="#GInterna" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-school pr-3 pl-2"></i>Centres Educatius</a>
+				<ul class="collapse list-unstyled" id="GInterna">
+					@if(auth()->user()->hasPermissionTo('GestioInstitut.view'))
+					<li class="{{request()->routeIs('professors.index') ? 'active' : ''}}">
+						<a href="{{route('professors.index')}}"><i class="fas fa-user-tie pr-2"></i>Professorat</a>
+					</li>
+					<li class="{{request()->routeIs('alumnos.index') ? 'active' : ''}}">
+						<a href="{{ route('alumnos.index') }}"><i class="fas fa-graduation-cap pr-2"></i>Alumnat</a>
+					</li>
+					<li class="{{request()->routeIs('grups.index') ? 'active' : ''}}">
+						<a href="{{route('grups.index')}}"><i class="fas fa-users pr-2"></i>Grups</a>
+					</li>
+					@endif
+					<li class="{{request()->routeIs('propostes.index') ? 'active' : ''}}"><a href="{{route('propostes.index')}}"><i class="fas fa-sticky-note pr-2"></i>Propostes</a></li>
+				</ul>
+			</li>
+			<li class="empresa {{request()->routeIs('projectes.index','empleats.index') ? 'active' : ''}}">
+				<a href="#GEmpresa" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-building pr-3 pl-2"></i>Entitats</a>
+				<ul class="collapse list-unstyled" id="GEmpresa">
+					<li class="{{request()->routeIs('projectes.index') ? 'active' : ''}}">
+						<a href="{{route('projectes.index')}}"><i class="fas fa-project-diagram pr-2"></i>Projectes</a>
+					</li>
+					@if(auth()->user()->hasPermissionTo('GestioEmpresa.view'))
+					<li class="{{request()->routeIs('empleats.index') ? 'active' : ''}}">
+						<a href="{{route('empleats.index')}}"><i class="fas fa-user-alt pr-2"></i>Participants al Projecte</a>
+					</li>
+					@endif
+				</ul>
+			</li>
+		</ul>
+	</nav>
+			<!-- Page Content -->
+			<div id="content">
+
+				<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+					<div class="container-fluid">
+
+						<button type="button" id="sidebarCollapse" class="btn btn-outline-primary my-2 my-sm-0">
+							<i class="fas fa-bars fa-align-left"></i>
+						</button>
+						<a class="navbar-brand navbar-collapse collapse pad" href="{{route('management')}}">
+							<!-- Logo -->
+							<img src="/img/logoproiectus.png" width="30" height="30" class="d-inline-block align-top" alt="">
+							<span>Proiectus</span>
+						  </a>
+					</div>
+
+					<div class="collapse navbar-collapse" id="perfilavatar">
+						<a href="{{route('mail.index')}}" title="Accedeix al correu"><i class="icon fas fa-envelope text-primary fa-fw"></i></a>
+						<a href="{{route('chat.index',1)}}" title="Accedeix al xat"><i class="icon fa fa-comment text-primary ml-2 fa-fw" aria-hidden="true"></i></a>
+						<a href="{{route('incidencies.index')}}" title="Accedeix al gestor de les incidències"><i class="icon fas fa-exclamation-triangle text-primary ml-2 fa-fw mr-1"></i></a>
+						<ul class="navbar-nav ml-auto" id="avat">
+							<li class="nav-item "><a class="nav-link active text-capitalize">{{ auth()->user()->user_name }}</a></li>
+							<li id="avatdef"><img class="avatar" src="../../avatars/{{auth()->user()->ruta_avatar}}"></li>
+							<i class="fas fa-chevron-down text-primary ml-2 mt-3"></i>
+						</ul>
+					</div>
+
+					<div class="wrapper2">
+						<div class="dropdown-menu dropdown-menu-right align-tr-br m-0 bg-light" id="action-menu-1-menu">
+							<a href="#" class="dropdown-item menu-action">
+								<i class="icon fa fa-tachometer fa-fw " aria-hidden="true"></i>
+								<span class="menu-action-text" id="actionmenuaction-1">Tauler</span>
+							</a>
+
+							<a href="{{route('management')}}" class="dropdown-item menu-action">
+								<i class="icon fa fa-tasks fa-fw " aria-hidden="true"></i>
+								<span class="menu-action-text" id="actionmenuaction-2">Management</span>
+							</a>
+
+							<div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+
+							<a href="{{route('perfil.user')}}" class="dropdown-item menu-action">
+								<i class="icon fa fa-user fa-fw " aria-hidden="true"></i>
+								<span class="menu-action-text" id="actionmenuaction-2">Perfil</span>
+							</a>
+
+							<div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+
+							<a href="{{route('logout')}}" class="dropdown-item menu-action" >
+								<i class="icon fa fa-sign-out fa-fw " aria-hidden="true"></i>
+								<span class="menu-action-text" id="actionmenuaction-6">Surt</span>
+							</a>
+
+						</div>
+					</div>
+				</nav>
+				@if (count($errors) > 0)
+				<div class="alert alert-danger mb-auto">
+			
+					@foreach ($errors->all() as $error)
+					  {{$error}}
+					@endforeach
+				</div>
+			  @endif

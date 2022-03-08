@@ -1,0 +1,11 @@
+
+{
+  "inputDir": "./",
+  "outputDir": "../../public/css/",
+    "useNpmSass": false,
+    "style":"compressed",
+    "sourcemap":"none",
+    "showStartup":false,
+    "showOutput":true,
+    "showError":true
+}

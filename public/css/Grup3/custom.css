@@ -1,0 +1,21 @@
+.botonera-table{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    padding: 1px 30px;
+    background-color: #E9EDF0;
+    align-self: center;
+    height: fit-content;
+}
+
+.table-title {
+    background: #38B868;
+    color: #fff;
+    border-radius: 3px 3px 0 0;
+}
+
+
+
+.dropdown-menu > li:hover{
+    /* background-color: #a4a4a4; */
+}

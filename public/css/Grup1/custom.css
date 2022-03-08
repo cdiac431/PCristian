@@ -1,0 +1,36 @@
+
+.modal-footer button{
+    margin: auto;
+    justify-content: center;
+}
+.modal-footer button[type="button"]{
+    background:lightgrey;
+}
+.modal-footer button[type="button"]:hover{
+    background: #C2C0C0;
+}
+
+.modal-footer form{
+    margin: auto;
+}
+
+.modal-footer form button{
+    margin-right: 15px;
+}
+
+.modal-footer form button[type="button"]:hover{
+    background: #C2C0C0;
+}
+
+
+#email:invalid {
+    box-shadow: 0 0 5px 1px red;
+  }
+
+#email:valid {
+    box-shadow: 0 0 5px 1px green;
+}
+
+#tamany{
+    font-size:16px;
+}

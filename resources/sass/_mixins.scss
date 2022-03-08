@@ -1,0 +1,13 @@
+@mixin featurette-ribbon {
+    outline: 1px solid;
+    outline-offset: -5px;
+    font-family: 'Noticia Text';
+    font-style: italic;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    //padding: 0.7em 1em;
+    padding: 2em 2em;
+
+    //border: 1px solid;
+}

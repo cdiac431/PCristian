@@ -1,0 +1,56 @@
+.modal-backdrop {
+    backdrop-filter: blur(5px) grayscale(90%);
+    background-color: rgba(0, 0, 0, 0.5);
+    &.show {
+        opacity: 1;
+    }
+}
+
+.dropdown-menu {
+    background-color: rgba(255,255,255,0.85);
+    backdrop-filter: blur(5px);
+}
+
+.cursor {
+    &-pointer {
+        cursor: pointer;
+    }
+}
+
+.overflow {
+    &-scroll {
+        overflow-x: scroll;
+    }
+}
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+
+.form-inline {
+
+
+    // Inline-block all the things for "inline"
+    .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+
+    // In navbar-form, allow folks to *not* use `.form-group`
+    .form-control {
+        display: inline-block;
+        width: auto; // Prevent labels from stacking above inputs in `.form-group`
+        vertical-align: middle;
+    }
+    // Input groups need that 100% width though
+    .input-group > .form-control {
+        width: 100%;
+    }
+
+}
+
+.alert {
+    z-index: 2;
+}
