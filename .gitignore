@@ -1,0 +1,6 @@
+/storage/framework/sessions/*
+/storage/framework/views/*
+/resources/sass/.sass-cache/*
+/bootstrap/cache/*
+/storage/logs/*
+.env

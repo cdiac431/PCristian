@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "axios": "^0.21",
+    "bootstrap": "^4.0.0",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "jquery": "^3.2",
+    "laravel-mix": "^6.0.6",
+    "lodash": "^4.17.19",
+    "popper.js": "^1.16.1",
+    "postcss": "^8.1.14",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.15.2",
+    "sass-loader": "^8.0.0"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "font-awesome-animation": "^1.1.1",
+    "node-sass": "^4.14.1",
+    "scss": "^0.2.4"
+  },
+  "name": "Sprint5",
+  "description": "",
+  "version": "1.0.0",
+  "main": "webpack.mix.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Josep-Lopez/Sprint5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Josep-Lopez/Sprint5/issues"
+  },
+  "homepage": "https://github.com/Josep-Lopez/Sprint5#readme"
+}
